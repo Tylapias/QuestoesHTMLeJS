@@ -1,4 +1,12 @@
-1 - ========================= HTML =========================
+# Exercícios de JavaScript
+
+---
+
+## 1 - Contador de Cliques
+
+### HTML
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +21,11 @@
 <script src="script.js"></script>
 </body>
 </html>
+```
 
-========================= CSS =========================
+### CSS
+
+```css
 body {
     text-align: center;
     font-family: Arial;
@@ -23,26 +34,42 @@ body {
 button {
     padding: 10px;
 }
+```
 
-========================= JS =========================
+### JS
+
+```javascript
 let contador = 0;
 
 document.getElementById("btn").addEventListener("click", function() {
     contador++;
     document.getElementById("contador").textContent = contador;
 });
+```
 
-2- ========================= HTML =========================
+---
+
+## 2 - Porteiro Digital
+
+### HTML
+
+```html
 <input type="number" id="idade">
 <button onclick="verificar()">Verificar</button>
 <p id="resultado"></p>
+```
 
-========================= CSS =========================
+### CSS
+
+```css
 #resultado {
     font-weight: bold;
 }
+```
 
-========================= JS =========================
+### JS
+
+```javascript
 function verificar() {
     let idade = document.getElementById("idade").value;
     let res = document.getElementById("resultado");
@@ -55,8 +82,15 @@ function verificar() {
         res.style.color = "red";
     }
 }
+```
 
-3- ========================= HTML =========================
+---
+
+## 3 - Calculadora
+
+### HTML
+
+```html
 <input type="number" id="n1">
 <select id="op">
     <option value="+">+</option>
@@ -68,8 +102,11 @@ function verificar() {
 <button onclick="calcular()">Calcular</button>
 
 <p id="res"></p>
+```
 
-========================= JS =========================
+### JS
+
+```javascript
 function calcular() {
     let a = Number(n1.value);
     let b = Number(n2.value);
@@ -83,14 +120,24 @@ function calcular() {
 
     res.textContent = "Resultado: " + r;
 }
+```
 
-4- ========================= HTML =========================
+---
+
+## 4 - Professor Automatizado
+
+### HTML
+
+```html
 <input id="nota1">
 <input id="nota2">
 <button onclick="media()">Calcular</button>
 <p id="saida"></p>
+```
 
-========================= JS =========================
+### JS
+
+```javascript
 function media() {
     let n1 = Number(nota1.value);
     let n2 = Number(nota2.value);
@@ -109,13 +156,23 @@ function media() {
         s.style.color = "red";
     }
 }
+```
 
-5- ========================= HTML =========================
+---
+
+## 5 - Tabuada
+
+### HTML
+
+```html
 <input id="num">
 <button onclick="gerar()">Gerar</button>
 <ul id="tabuada"></ul>
+```
 
-========================= JS =========================
+### JS
+
+```javascript
 function gerar() {
     let n = Number(num.value);
     let lista = document.getElementById("tabuada");
@@ -127,13 +184,23 @@ function gerar() {
         lista.appendChild(li);
     }
 }
+```
 
-6- ========================= HTML =========================
+---
+
+## 6 - Lista de Missões
+
+### HTML
+
+```html
 <input id="missao">
 <button onclick="add()">Adicionar</button>
 <ul id="lista"></ul>
+```
 
-========================= JS =========================
+### JS
+
+```javascript
 function add() {
     let texto = missao.value;
 
@@ -146,8 +213,15 @@ function add() {
 
     lista.appendChild(li);
 }
+```
 
-7- ========================= HTML =========================
+---
+
+## 7 - Cadastro com Validação
+
+### HTML
+
+```html
 <input id="nome">
 <p id="erroNome"></p>
 
@@ -155,8 +229,11 @@ function add() {
 <p id="erroEmail"></p>
 
 <button onclick="validar()">Cadastrar</button>
+```
 
-========================= JS =========================
+### JS
+
+```javascript
 function validar() {
     let nome = nome.value;
     let email = email.value;
@@ -164,8 +241,23 @@ function validar() {
     erroNome.textContent = nome == "" ? "Nome obrigatório" : "";
     erroEmail.textContent = !email.includes("@") ? "Email inválido" : "";
 }
+```
 
-8- ========================= JS =========================
+---
+
+## 8 - Jogo de Adivinhação
+
+### HTML
+
+```html
+<input id="palpite">
+<button onclick="tentar()">Tentar</button>
+<p id="msg"></p>
+```
+
+### JS
+
+```javascript
 let numero = Math.floor(Math.random() * 20) + 1;
 let tentativas = 0;
 
@@ -179,8 +271,25 @@ function tentar() {
     else if (palpite < numero) msg.textContent = "Muito baixo";
     else msg.textContent = "Acertou! Tentativas: " + tentativas;
 }
+```
 
-9- ========================= JS =========================
+---
+
+## 9 - Sistema de Votação
+
+### HTML
+
+```html
+<button onclick="votar(1)">Candidato A</button>
+<button onclick="votar(2)">Candidato B</button>
+<button onclick="votar(3)">Candidato C</button>
+
+<p id="resultado"></p>
+```
+
+### JS
+
+```javascript
 let a = 0, b = 0, c = 0;
 
 function votar(x) {
@@ -190,8 +299,27 @@ function votar(x) {
 
     resultado.textContent = `A:${a} B:${b} C:${c}`;
 }
+```
 
-10- ========================= JS =========================
+---
+
+## 10 - Cadastro Completo
+
+### HTML
+
+```html
+<input id="nome" placeholder="Nome">
+<input id="email" placeholder="Email">
+<input id="idade" type="number" placeholder="Idade">
+<input id="senha" type="password" placeholder="Senha">
+<input id="conf" type="password" placeholder="Confirmar senha">
+
+<button onclick="cadastrar()">Cadastrar</button>
+```
+
+### JS
+
+```javascript
 function cadastrar() {
     let nome = nome.value;
     let email = email.value;
@@ -221,3 +349,4 @@ function cadastrar() {
 
     alert("Cadastro realizado!");
 }
+```
